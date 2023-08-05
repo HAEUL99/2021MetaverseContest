@@ -53,11 +53,11 @@ message6:SetVisible(false)
 local function itemattach(i) -- i: attach 또는 detach할 아이템의 번호
     if i == 1 then -- 초 
         clickitem = Item1 
-    elseif i == 2 then -- 운세쪽지 
+    elseif i == 2 then -- 운세통(운세쪽지 뽑는 통) 
         clickitem = Item2
     elseif i == 3 then -- 열쇠
         clickitem = Item3
-    elseif i == 5 then -- message
+    elseif i == 5 then -- 운세쪽지
         clickitem = Item5
     else
         clickitem = Item4 -- 폭죽
