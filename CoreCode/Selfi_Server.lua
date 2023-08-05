@@ -23,7 +23,7 @@ local function EndOverlapEvent(self, target)
                  table.remove(area_list, key)
             end
         end
-        Game:BroadcastEvent("Reset"
+        Game:BroadcastEvent("Reset")
         for i = 1, #area_list, 1 do
             Game:BroadcastEvent("Camera_Mult", area_list[i]) 
         end  
