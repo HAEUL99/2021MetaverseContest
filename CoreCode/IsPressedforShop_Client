@@ -1,0 +1,80 @@
+--오미쿠지 
+--progressbar, animation, button(쪽지버튼) 보이게 하기
+local ScreenUI = Script.Parent.ScreenUI
+local progressbar = ScreenUI.ProgressBar
+
+local ScreenUIA = Script.Parent.ScreenUIA
+local ScreenUIB = Script.Parent.ScreenUIB
+local ScreenUIC = Script.Parent.ScreenUIC
+local ScreenUID = Script.Parent.ScreenUID
+local ScreenUIE = Script.Parent.ScreenUIE
+
+local A_me = ScreenUIA.A_me
+local B_me = ScreenUIB.B_me
+local C_me = ScreenUIC.C_me
+local D_me = ScreenUID.D_me
+local E_me = ScreenUIE.E_me
+
+local Idle = Toybox.CharacterSetting.Idle
+local mess1 = Toybox.CharacterSetting.mess1
+local mess2 = Toybox.CharacterSetting.mess2
+local mess3 = Toybox.CharacterSetting.mess3
+local mess4 = Toybox.CharacterSetting.mess4
+local mess5 = Toybox.CharacterSetting.mess5
+
+local Text = ScreenUI.Text
+local Button2 = Workspace.inventorybutton.ScreenUI.Button2
+local message1 = Workspace.inventorybutton.ScreenUI.message1
+local message2 = Workspace.inventorybutton.ScreenUI.message2
+local message3 = Workspace.inventorybutton.ScreenUI.message3
+local message4 = Workspace.inventorybutton.ScreenUI.message4
+local message5 = Workspace.inventorybutton.ScreenUI.message5
+local message6 = Workspace.inventorybutton.ScreenUI.message6
+
+progressbar:SetVisible(false)
+Text:SetVisible(false)
+
+A_me:SetVisible(false)
+B_me:SetVisible(false)
+C_me:SetVisible(false)
+D_me:SetVisible(false)
+E_me:SetVisible(false)
+
+
+local function FillProgressBar()  
+    -- 1~ 100까지
+    randomnum = math.random(100)
+    local character = LocalPlayer:GetRemotePlayer():GetCharacter()
+    progressbar:SetVisible(true)
+    Text:SetVisible(true)
+    local maxValue = 100
+    for i = 0, 20, 2 do   
+        progressbar:SetPercent(((i * 5)/100) * 100)
+        wait(0.5)
+    end
+    progressbar:SetVisible(false)
+    Text:SetVisible(false)
+  
+    if randomnum <= 4 then
+        A_me:SetVisible(true)
+    elseif randomnum <= 24 then
+        B_me:SetVisible(true)
+    elseif randomnum <= 76 then
+        C_me:SetVisible(true)
+    elseif randomnum <= 96 then
+        D_me:SetVisible(true)
+    else
+        E_me:SetVisible(true)                     
+    end
+    wait(0.3)
+    Button2:SetVisible(true)
+    message1:SetVisible(true)
+    message2:SetVisible(true)
+    message3:SetVisible(true)
+    message4:SetVisible(true)
+    message5:SetVisible(true)
+    message6:SetVisible(true)
+    
+    
+end
+Game:ConnectEventFunction("IsPressedforShop", FillProgressBar)
